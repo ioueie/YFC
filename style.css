@@ -244,24 +244,111 @@ iframe {
 
 /* Mobile layout */
 
-@media (max-width: 840px) {
+@media (max-width: 768px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    background: radial-gradient(circle at top left, #1f2937 0, #020617 80%);
+  }
+
   .hero {
     height: 200px;
   }
 
   header {
-    bottom: 16px;
+    bottom: 14px;
+    width: 92vw;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  header p {
+    font-size: 0.85rem;
   }
 
   main {
-    padding-inline: 14px;
+    padding: 12px 10px 28px;
   }
 
   .layout {
-    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .card {
+    padding: 16px 14px 14px;
+    border-radius: 14px;
+  }
+
+  .card h2 {
+    font-size: 1rem;
+  }
+
+  .card p.sub {
+    font-size: 0.8rem;
+  }
+
+  /* Ensure iframe & content don’t cause horizontal scroll */
+  iframe {
+    width: 100%;
+    min-height: 380px;
+    border-radius: 10px;
+    display: block;
+  }
+
+  .form-note {
+    font-size: 0.78rem;
+    flex-wrap: wrap;
+  }
+
+  .form-note .pill {
+    margin-bottom: 3px;
   }
 
   .prayer-list {
     max-height: none;
+    padding-right: 0;
+  }
+
+  .prayer-card {
+    padding: 9px 10px 10px;
+  }
+
+  .prayer-body {
+    font-size: 0.8rem;
+  }
+
+  .prayer-meta {
+    font-size: 0.68rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+  }
+
+  .chip {
+    font-size: 0.68rem;
+  }
+}
+
+/* Extra small devices if you want it even tighter */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.3rem;
+  }
+
+  .hero {
+    height: 180px;
+  }
+
+  iframe {
+    min-height: 350px;
   }
 }
